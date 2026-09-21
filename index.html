@@ -287,7 +287,21 @@ function show_infobox() {
     <script src="https://pygame-web.github.io/cdn/0.9.3//browserfs.min.js"></script>
 
 
+    <!-- Anti-Cache & Border Removal -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    
     <style>
+        * {
+            outline: none !important;
+            border: none !important;
+            box-shadow: none !important;
+            -webkit-tap-highlight-color: transparent !important;
+            -webkit-touch-callout: none !important;
+            -webkit-user-select: none !important;
+            user-select: none !important;
+        }
         html, body {
             background-color: #141828 !important;
             margin: 0 !important;
@@ -295,10 +309,17 @@ function show_infobox() {
             width: 100vw !important;
             height: 100vh !important;
             overflow: hidden !important;
+            border: 0 !important;
+            outline: none !important;
+        }
+        canvas, #canvas, .emscripten, div, iframe {
+            border: 0px none transparent !important;
+            outline: none !important;
+            box-shadow: none !important;
         }
     </style>
-    <link rel="manifest" href="manifest.json">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="manifest" href="manifest.json?v=1790031070">
+    <link rel="icon" href="favicon.ico?v=1790031070" type="image/x-icon">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <meta name="theme-color" content="#141828">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -453,5 +474,18 @@ frameborder="1"
 
     </script>
 
+
+    <script>
+        function removeBorders() {
+            document.querySelectorAll('canvas, div, iframe, #canvas, .emscripten').forEach(el => {
+                el.style.border = 'none';
+                el.style.outline = 'none';
+                el.style.boxShadow = 'none';
+            });
+        }
+        window.addEventListener('load', removeBorders);
+        setInterval(removeBorders, 300);
+    </script>
+    
 </body>
 </html>
