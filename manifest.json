@@ -1,10 +1,10 @@
 {
     "name": "NexoBrix",
     "short_name": "NexoBrix",
-    "start_url": "./?v=1790036031",
+    "start_url": "./?v=1790036432",
     "display": "standalone",
-    "background_color": "#E4EAF2",
-    "theme_color": "#E4EAF2",
+    "background_color": "#D4C6B4",
+    "theme_color": "#D4C6B4",
     "icons": [
         {
             "src": "icon-192.png",
